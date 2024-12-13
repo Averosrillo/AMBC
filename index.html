@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambiance.grp</title>
+    <link rel="icon" href="images/ambc.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6a0dad;
+            --background-dark: #0f0f0f;
+            --text-light: #e0e0e0;
+            --card-background: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--background-dark), #222);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background: rgba(16, 16, 16, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand img {
+            width: 120px;  /* Adjust the width of the logo as needed */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, var(--primary-color), #9b4dca);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+        }
+
+        /* Category Filters */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background-color: var(--card-background);
+            color: var(--text-light);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            background-color: var(--card-background);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-item-content {
+            padding: 20px;
+        }
+
+        .gallery-item-title {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .gallery-item-description {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .gallery-item-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+            background-color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #9b4dca;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            background-color: rgba(16, 16, 16, 0.5);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="container nav">
+        <a href="#" class="nav-brand"><img src="images/ambc.png" alt="Ambiance Logo"></a>
+        <div class="nav-links">
+            <a href="#" class="ri-home-line"> Utama</a>
+            <a href="https://youtube.com/@dansfx?si=DilZjDGFuECCojre" class="ri-video-line"> Youtube</a>
+            <a href="https://www.instagram.com/ambiance.grp/" class="ri-contacts-line"> Instagram</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container hero">
+        <h1>Welcome To Ambiance</h1>
+        <p>Transforming moments into breathtaking visual experiences through AMV, GMV, and MMV</p>
+    </section>
+
+    <!-- Category Filters -->
+    <div class="container filters">
+        <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+        <button class="filter-btn" onclick="filterCategory('AMV')">AMV</button>
+        <button class="filter-btn" onclick="filterCategory('GMV')">GMV</button>
+        <button class="filter-btn" onclick="filterCategory('MMV')">MMV</button>
+    </div>
+
+    <!-- Gallery -->
+    <div class="container gallery" id="galleryContainer">
+        <div class="gallery-item category-AMV">
+            <img src="https://img.youtube.com/vi/cHLg0Y06gCE/0.jpg" alt="AMV Video">
+            <div class="gallery-item-content">
+                <h3 class="gallery-item-title">Anime Music Video</h3>
+                <p class="gallery-item-description">Epic scenes from your favorite anime, remixed with powerful music</p>
+                <div class="gallery-item-actions">
+                    <a href="https://youtu.be/fZ7HAxItM54?si=5H4dazMAroJneVMj" class="btn">Youtube</a>
+                    <a href="https://youtu.be/fZ7HAxItM54?si=5H4dazMAroJneVMj" class="btn">Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-GMV">
+            <img src="https://img.youtube.com/vi/WLka9nTgupU/0.jpg" alt="GMV Video">
+            <div class="gallery-item-content">
+                <h3 class="gallery-item-title">Game Music Video</h3>
+                <p class="gallery-item-description">Powerful game moments synchronized with electrifying music</p>
+                <div class="gallery-item-actions">
+                    <a href="https://youtu.be/GIKENLhG_18?si=_jJqWWg5wz5Bom0o" class="btn">Youtube</a>
+                    <a href="https://youtu.be/GIKENLhG_18?si=_jJqWWg5wz5Bom0o" class="btn">Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item category-MMV">
+            <img src="https://img.youtube.com/vi/Qe5tUBeRq3Q/0.jpg" alt="MMV Video">
+            <div class="gallery-item-content">
+                <h3 class="gallery-item-title">Manga Music Video</h3>
+                <p class="gallery-item-description">Emotional storytelling through music and visual art</p>
+                <div class="gallery-item-actions">
+                    <a href="https://youtu.be/GIKENLhG_18?si=_jJqWWg5wz5Bom0o" class="btn">Youtube</a>
+                    <a href="https://youtu.be/GIKENLhG_18?si=_jJqWWg5wz5Bom0o" class="btn">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Ambiance. Dani Suki.</p>
+        <small>Crafting Visual Experiences</small>
+        <!-- <p>&copy; 2024 Ambiance. All Creative Rights Reserved.</p>
+        <small>Crafting Visual Experiences</small> -->
+    </footer>
+
+    <script>
+        function filterCategory(category) {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            // Reset active state on buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            galleryItems.forEach(item => {
+                if (category === 'all' || item.classList.contains(`category-${category}`)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
